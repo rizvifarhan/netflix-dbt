@@ -1,15 +1,21 @@
-Welcome to your new dbt project!
+Project Architecture
+👉🏻 Extract: Download and stage CSV files in Amazon S3
+👉🏻 Load: Use Snowflake to load data into raw tables
+👉🏻 Transform: Use DBT to build clean, modular, tested data models
+👉🏻 Serve: Visualize the data using Looker Studio and Power BI
 
-### Using the starter project
+✅ DBT Models: You’ll learn how to write modular SQL models that represent business logic. Each model is a .sql file that gets materialized as a table or view in your data warehouse.
 
-Try running the following commands:
-- dbt run
-- dbt test
+✅ Materializations: Understand how DBT creates database objects using different strategies, like view, table, and incremental, and when to use each one.
 
+✅ Sources: Learn how to define raw data sources in DBT and reference them cleanly across your models. This improves data lineage and maintainability.
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+✅ Seeds: Use CSV files stored locally in your DBT project to create quick reference tables in your data warehouse — ideal for static lookup data.
+
+✅Snapshots: Implement slowly changing dimensions (SCD Type 2) using DBT’s snapshot feature to track historical changes over time.
+
+✅ Tests: Build data quality checks using built-in tests like unique, not_null, accepted_values, and even write your own custom tests.
+
+✅ Macros: Leverage Jinja to create reusable logic inside DBT — such as dynamically generating columns or filters across models.
+
+✅ Documentation: Auto-generate visual documentation and DAG (Directed Acyclic Graphs) for your entire pipeline, making it easy to understand relationships between tables.
